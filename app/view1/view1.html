@@ -1,1 +1,48 @@
-<p>This is the partial for view 1.</p>
+<div >
+    
+    <div class="row" style="margin:10px 0 10px 0">
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <select class="form-control" ng-model="selectedCurr" ng-change="getData()">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="INR" selected>INR</option>
+            </select>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3 pull-right">
+            <button class="btn btn-primary" ng-click="getData()">Refresh Data</button>
+        </div>
+    </div>
+    <div class="row">
+    <table class="col-md-12 table table-bordered " >
+        <thead>
+          <tr>
+            
+            <th>Name</th>
+            <th>Market Capital</th>
+            <th >Price</th>
+            <th>Volume (24 Hr)</th>
+
+            <th>Avail Suppy</th>
+            <th> Change % (24 Hr) </th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  ng-click="$parent.navigate(row)" ng-repeat="row in tableData" style="cursor:pointer">
+            <td>{{row.name}}</td>
+            <td ng-bind="{{'row.market_cap_'+ (selectedCurr | lowercase)}}"></td>
+            <td ng-bind="{{'row.price_'+ (selectedCurr | lowercase)}}"></td>
+            <!-- <td>{{}}</td> -->
+            <td ng-bind="{{row['24h_volume_'+(selectedCurr | lowercase)]}}"></td>
+
+            <td>{{row.available_supply}}</td>
+            <td>{{row.percent_change_24h}}</td>
+            <td  ng-bind="notesObj[row.id]"></td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

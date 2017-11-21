@@ -23,3 +23,6 @@
   content: "|";
   padding-right: 0.3em;
 }
+tbody tr:hover{
+  background-color: aquamarine;
+}

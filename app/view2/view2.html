@@ -1,5 +1,75 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div>
+    <div class="row" >
+        <a class="btn btn-primary" href="/" style="margin:10px">Back</a>
+    </div>
+  <div class="row ">
+    <div class="col-xs-12 col-sm-8 col-md-5 ">
+      <table class="table table-bordered">
+        <thead>
+          <th class="">Attribute</th>
+          <th class="">Value</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <td>{{currencyData.name}}</td>
+          </tr>
+          <tr>
+            <th>Symbol</th>
+            <td>{{currencyData.symbol}}</td>
+          </tr>
+          <tr>
+            <th>USD Price</th>
+            <td>{{currencyData.price_usd}}</td>
+          </tr>
+          <tr>
+            <th>Bitcoin Price</th>
+            <td>{{currencyData.price_btc}}</td>
+          </tr>
+          <tr>
+            <th>Volume USD (24 Hr)</th>
+            <td>{{currencyData['24h_volume_usd']}}</td>
+          </tr>
+          <tr>
+            <th>Market Cap USD</th>
+            <td>{{currencyData.market_cap_usd}}</td>
+          </tr>
+          <tr>
+            <th>Available Suppy</th>
+            <td>{{currencyData.available_supply}}</td>
+          </tr>
+          <tr>
+            <th>Total Supply</th>
+            <td>{{currencyData.total_supply}}</td>
+          </tr>
+          <tr>
+            <th>Max Supply</th>
+            <td>{{currencyData.max_supply}}</td>
+          </tr>
+          <tr>
+            <th>Change % (1 Hr)</th>
+            <td>{{currencyData.percent_change_1h}}</td>
+          </tr>
+          <tr>
+              <th>Change % (24 Hr)</th>
+              <td>{{currencyData.percent_change_24h}}</td>
+          </tr>
+          <tr>
+              <th>Change % (7 day)</th>
+              <td>{{currencyData.percent_change_7d}}</td>
+          </tr>
+          <tr>
+              <th>Last Updated</th>
+              <td>{{currencyData.last_updated}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">
+        <label class="col-md-3"> Notes :</label>
+        <textarea ng-model="notes" style="height:100px; width:60%"></textarea>
+    <button class="btn btn-success" ng-click="saveNotes()">Save</button>    
+    </div>
+  </div>
+  </div>
+</div>
