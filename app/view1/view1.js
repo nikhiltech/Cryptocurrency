@@ -17,7 +17,6 @@ angular.module('myApp.view1', ['ngRoute'])
   else{
     $scope.selectedCurr=sessionStorage.getItem('currSelected')
   }
-  debugger
   $scope.notesObj=JSON.parse(sessionStorage.getItem('notesObj'));
   $scope.getData=function(){
     sessionStorage.setItem('currSelected',$scope.selectedCurr)
@@ -25,7 +24,7 @@ angular.module('myApp.view1', ['ngRoute'])
     
   $http.get(url).then(function(response){
     $scope.tableData=response.data;
-    console.log($scope.tableData)
+    //console.log($scope.tableData)
   },
   function(err){
     console.log(err);
